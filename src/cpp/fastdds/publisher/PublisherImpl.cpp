@@ -83,7 +83,6 @@ static void set_qos_from_attributes(
     qos.data_sharing() = attr.qos.data_sharing;
     qos.reliable_writer_qos().disable_heartbeat_piggyback = attr.qos.disable_heartbeat_piggyback;
 
-        logError(PUBLISHER, "FFFFFFFFFFFFFFFFFF");
     if (attr.qos.m_partition.size() > 0 )
     {
         Property property;
@@ -114,7 +113,6 @@ PublisherImpl::PublisherImpl(
     , rtps_participant_(p->rtps_participant())
     , default_datawriter_qos_(DATAWRITER_QOS_DEFAULT)
 {
-        logError(PUBLISHER, "FFFFFFFFFFFFFFFFFF");
     PublisherAttributes pub_attr;
     XMLProfileManager::getDefaultPublisherAttributes(pub_attr);
     set_qos_from_attributes(default_datawriter_qos_, pub_attr);
@@ -122,7 +120,6 @@ PublisherImpl::PublisherImpl(
 
 ReturnCode_t PublisherImpl::enable()
 {
-        logError(PUBLISHER, "FFFFFFFFFFFFFFFFFF");
     if (qos_.entity_factory().autoenable_created_entities)
     {
         std::lock_guard<std::mutex> lock(mtx_writers_);
@@ -156,7 +153,6 @@ void PublisherImpl::disable()
 
 PublisherImpl::~PublisherImpl()
 {
-        logError(PUBLISHER, "FFFFFFFFFFFFFFFFFF");
     {
         std::lock_guard<std::mutex> lock(mtx_writers_);
         for (auto it = writers_.begin(); it != writers_.end(); ++it)

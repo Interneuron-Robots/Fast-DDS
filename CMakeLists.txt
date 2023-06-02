@@ -42,6 +42,10 @@ message(STATUS "Version: ${PROJECT_VERSION}")
 ###############################################################################
 option(EPROSIMA_BUILD "Activate internal building" OFF)
 
+# INTERNEURON feature
+if(${INTERNEURON})
+  add_compile_options(-DINTERNEURON)
+endif()
 ###############################################################################
 # Warning level
 ###############################################################################

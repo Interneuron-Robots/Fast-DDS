@@ -87,6 +87,7 @@ bool WriterHistory::prepare_and_add_change(
     ++m_lastCacheChangeSeqNum;
     a_change->sequenceNumber = m_lastCacheChangeSeqNum;
     Time_t::now(a_change->sourceTimestamp);
+    //logError(RTPS_WRITER_HISTORY,"set the sourceTimestamp,the value:"<<a_change->sourceTimestamp.to_ns());
     a_change->writer_info.num_sent_submessages = 0;
 
     a_change->write_params = wparams;
