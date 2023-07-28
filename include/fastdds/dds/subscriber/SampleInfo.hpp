@@ -114,10 +114,6 @@ struct SampleInfo
     //!Related Sample Identity (Extension for RPC)
     fastrtps::rtps::SampleIdentity related_sample_identity;
 
-    #ifdef INTERNEURON
-    int32_t test_interneuron;
-    #endif
-
 };
 
 }  // namespace dds
